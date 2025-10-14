@@ -1,0 +1,23 @@
+{
+  "name": "digital-oasis",
+  "version": "1.0.0",
+  "description": "A beautiful, interactive web page hosted on GitHub Pages",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "build": "echo 'No build step required for static site'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git"
+  },
+  "keywords": [
+    "webpage",
+    "github-pages",
+    "interactive",
+    "responsive"
+  ],
+  "author": "Frat Antonio Quintero",
+  "license": "MIT",
+  "homepage": "https://fratquintero.dpdns.org"
+}

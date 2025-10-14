@@ -1,0 +1,24 @@
+# Server files (not needed for GitHub Pages)
+hello_world.py
+start_server.sh
+update_freedns.sh
+freedns-update.service
+freedns-update.timer
+setup.sh
+ROUTER_SETUP.md
+server.log
+
+# SSL Certificates (keep private)
+*.pem
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*

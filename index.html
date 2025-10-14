@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fratquintero.dpdns.org - Digital Oasis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .status {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .interactive-section {
+            margin: 30px 0;
+        }
+
+        .color-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .color-button:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .counter {
+            font-size: 2rem;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 40px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="floating">🌴 Digital Oasis</h1>
+        <p class="subtitle">Welcome to fratquintero.dpdns.org - A simple corner of the internet</p>
+
+        <div class="status pulse">
+            ✅ Server Status: Online & Secure
+        </div>
+
+        <div class="interactive-section">
+            <h2>Interactive Demo</h2>
+            <p>Click the buttons to change the background color!</p>
+            <br>
+            <button class="color-button" onclick="changeBackground('#667eea')">Ocean Blue</button>
+            <button class="color-button" onclick="changeBackground('#764ba2')">Purple Dream</button>
+            <button class="color-button" onclick="changeBackground('#f093fb')">Pink Sunset</button>
+            <button class="color-button" onclick="changeBackground('#4facfe')">Sky Blue</button>
+            <button class="color-button" onclick="changeBackground('#43e97b')">Green Fresh</button>
+        </div>
+
+        <div class="interactive-section">
+            <h2>Visit Counter</h2>
+            <div class="counter" id="counter">0</div>
+            <button class="color-button" onclick="incrementCounter()">Click Me!</button>
+        </div>
+
+        <div class="footer">
+            <p>Powered by Python HTTPS Server | SSL Secured | FreeDNS Dynamic Updates</p>
+            <p>Current Time: <span id="currentTime"></span></p>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+        const counterElement = document.getElementById('counter');
+        const timeElement = document.getElementById('currentTime');
+
+        function changeBackground(color) {
+            document.body.style.background = `linear-gradient(135deg, ${color} 0%, ${adjustColor(color, -20)} 100%)`;
+            // Add a fun animation
+            document.querySelector('.container').style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                document.querySelector('.container').style.transform = 'scale(1)';
+            }, 150);
+        }
+
+        function adjustColor(color, amount) {
+            // Simple color adjustment for gradient
+            const usePound = color[0] == '#';
+            const col = usePound ? color.slice(1) : color;
+
+            const num = parseInt(col, 16);
+            let r = (num >> 16) + amount;
+            let g = (num >> 8 & 0x00FF) + amount;
+            let b = (num & 0x0000FF) + amount;
+
+            r = r > 255 ? 255 : r < 0 ? 0 : r;
+            g = g > 255 ? 255 : g < 0 ? 0 : g;
+            b = b > 255 ? 255 : b < 0 ? 0 : b;
+
+            return (usePound ? '#' : '') + (r << 16 | g << 8 | b).toString(16);
+        }
+
+        function incrementCounter() {
+            count++;
+            counterElement.textContent = count;
+            counterElement.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                counterElement.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        function updateTime() {
+            const now = new Date();
+            timeElement.textContent = now.toLocaleString();
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call
+
+        // Add some fun on page load
+        window.addEventListener('load', () => {
+            document.querySelector('h1').style.opacity = '0';
+            document.querySelector('h1').style.animation = 'none';
+
+            setTimeout(() => {
+                document.querySelector('h1').style.transition = 'opacity 1s';
+                document.querySelector('h1').style.opacity = '1';
+            }, 500);
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key >= '1' && e.key <= '5') {
+                const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b'];
+                changeBackground(colors[e.key - 1]);
+            }
+        });
+    </script>
+</body>
+</html>
