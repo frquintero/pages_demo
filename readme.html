@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Digital Oasis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin: 25px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #fff;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .back-link:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .header, .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌴 Digital Oasis</h1>
+            <p class="subtitle">Documentation & Setup Guide</p>
+            <a href="index.html" class="back-link">← Back to Website</a>
+        </div>
+
+        <div class="content">
+            <h2>🚀 Quick Setup</h2>
+
+            <h3>1. Create GitHub Repository</h3>
+            <ol>
+                <li>Go to <a href="https://github.com" style="color: #fff; text-decoration: underline;">GitHub.com</a> and create a new repository</li>
+                <li>Name it: <code>fratquintero.github.io</code> (for custom domain) OR any name you want</li>
+                <li>Make it public</li>
+                <li>Don't initialize with README (we have one)</li>
+            </ol>
+
+            <h3>2. Upload Files</h3>
+            <pre><code># Clone your new repository
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+
+# Copy the web files
+cp -r /run/media/fratq/4593fc5e-12d7-4064-8a55-3ad61a661126/CODE/apps/router_test/docs/* ./
+cp /run/media/fratq/4593fc5e-12d7-4064-8a55-3ad61a661126/CODE/apps/router_test/README.md ./
+
+# Add, commit, and push
+git add .
+git commit -m "Initial commit: Digital Oasis website"
+git push origin main</code></pre>
+
+            <h3>3. Enable GitHub Pages</h3>
+            <ol>
+                <li>Go to your repository on GitHub</li>
+                <li>Click <strong>Settings</strong> tab</li>
+                <li>Scroll down to <strong>Pages</strong> section</li>
+                <li>Under <strong>Source</strong>, select <strong>"Deploy from a branch"</strong></li>
+                <li>Select <strong>main</strong> branch and <strong>/(root)</strong> folder</li>
+                <li>Click <strong>Save</strong></li>
+            </ol>
+
+            <h3>4. Configure Custom Domain (Optional)</h3>
+            <p>If you want to use <code>fratquintero.dpdns.org</code>:</p>
+            <ol>
+                <li>In Pages settings, enter <code>fratquintero.dpdns.org</code> in <strong>Custom domain</strong></li>
+                <li>Click <strong>Save</strong></li>
+                <li>GitHub will create a <code>CNAME</code> file automatically</li>
+            </ol>
+
+            <h2>📁 Project Structure</h2>
+            <pre><code>your-repo/
+├── index.html          # Main web page with CSS and JS
+├── README.md           # This file
+└── docs/              # Alternative location (not needed for Pages)</code></pre>
+
+            <h2>🎨 Features</h2>
+            <ul>
+                <li><strong>Responsive Design</strong>: Works on desktop and mobile</li>
+                <li><strong>Interactive Elements</strong>: Color-changing background buttons</li>
+                <li><strong>Real-time Clock</strong>: Updates every second</li>
+                <li><strong>Visit Counter</strong>: Click counter with animations</li>
+                <li><strong>Modern UI</strong>: Glassmorphism design with gradients</li>
+                <li><strong>Keyboard Shortcuts</strong>: Press 1-5 to change colors</li>
+            </ul>
+
+            <h2>🔧 Customization</h2>
+            <ul>
+                <li>Edit <code>index.html</code> to change content, colors, or add features</li>
+                <li>Modify the CSS in the <code>&lt;style&gt;</code> tag for styling</li>
+                <li>Update JavaScript in the <code>&lt;script&gt;</code> tag for functionality</li>
+            </ul>
+
+            <h2>🌐 Access Your Site</h2>
+            <ul>
+                <li><strong>GitHub Pages URL</strong>: <code>https://YOUR_USERNAME.github.io/YOUR_REPO_NAME</code></li>
+                <li><strong>Custom Domain</strong>: <code>https://fratquintero.dpdns.org</code> (after DNS setup)</li>
+            </ul>
+
+            <h2>📝 FreeDNS Setup (for custom domain)</h2>
+            <p>If using custom domain, configure FreeDNS:</p>
+            <ol>
+                <li>Login to <a href="https://freedns.afraid.org" style="color: #fff; text-decoration: underline;">FreeDNS.afraid.org</a></li>
+                <li>Go to Dynamic DNS</li>
+                <li>Find <code>fratquintero.dpdns.org</code></li>
+                <li>Copy the Direct URL</li>
+                <li>Set up automatic updates (see original setup files)</li>
+            </ol>
+
+            <h2>🎯 Demo</h2>
+            <p>The page includes:</p>
+            <ul>
+                <li>Gradient background with color-changing buttons</li>
+                <li>Floating animations</li>
+                <li>Interactive counter</li>
+                <li>Real-time clock</li>
+                <li>Keyboard shortcuts (1-5 for colors)</li>
+            </ul>
+
+            <div class="highlight">
+                <p><span class="emoji">🌴✨</span> <strong>Enjoy your new website!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
