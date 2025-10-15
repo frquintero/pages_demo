@@ -80,6 +80,17 @@ body {
     letter-spacing: 0.5px;
 }
 
+.date-iso {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
