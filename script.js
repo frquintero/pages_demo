@@ -3,6 +3,7 @@ const counterElement = document.getElementById('counter');
 const timeElement = document.getElementById('currentTime');
 const clockTimeElement = document.getElementById('clockTime');
 const clockDateElement = document.getElementById('clockDate');
+const clockDateISOElement = document.getElementById('clockDateISO');
 
 // Digital clock functionality
 function updateDigitalClock() {
@@ -22,11 +23,20 @@ function updateDigitalClock() {
     const date = now.getDate();
     const dateString = `${dayName}, ${monthName} ${date}`;
     
+    // Format ISO date as YY-MM-DD
+    const year = String(now.getFullYear()).slice(-2);
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const isoDateString = `${year}-${month}-${day}`;
+    
     if (clockTimeElement) {
         clockTimeElement.textContent = timeString;
     }
     if (clockDateElement) {
         clockDateElement.textContent = dateString;
+    }
+    if (clockDateISOElement) {
+        clockDateISOElement.textContent = isoDateString;
     }
 }
 
