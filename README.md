@@ -35,10 +35,11 @@ git push origin main
 6. Click **Save**
 
 ### 4. Configure Custom Domain (Optional)
-If you want to use `fratquintero.dpdns.org`:
-1. In Pages settings, enter `fratquintero.dpdns.org` in **Custom domain**
+If you want to use a custom domain like `pages.fratquintero.dpdns.org`:
+1. In Pages settings, enter your custom domain name
 2. Click **Save**
 3. GitHub will create a `CNAME` file automatically
+4. Update your FreeDNS or domain registrar DNS records to point to GitHub Pages
 
 ## 📁 Project Structure
 ```
@@ -62,16 +63,17 @@ your-repo/
 - Update JavaScript in the `<script>` tag for functionality
 
 ## 🌐 Access Your Site
-- **GitHub Pages URL**: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME`
-- **Custom Domain**: `https://fratquintero.dpdns.org` (after DNS setup)
+- **Main Page**: `https://pages.fratquintero.dpdns.org/index.html`
+- **Documentation**: `https://pages.fratquintero.dpdns.org/readme.html`
+- **GitHub Pages URL**: `https://frquintero.github.io/pages_demo`
 
 ## 📝 FreeDNS Setup (for custom domain)
-If using custom domain, configure FreeDNS:
+If using custom domain `pages.fratquintero.dpdns.org`:
 1. Login to [FreeDNS.afraid.org](https://freedns.afraid.org)
 2. Go to Dynamic DNS
-3. Find `fratquintero.dpdns.org`
-4. Copy the Direct URL
-5. Set up automatic updates (see original setup files)
+3. Find or create a subdomain entry for your custom domain
+4. Point it to your GitHub Pages domain
+5. Set up automatic updates if needed
 
 ## 🎯 Demo
 The page includes:

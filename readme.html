@@ -198,11 +198,12 @@ git push origin main</code></pre>
             </ol>
 
             <h3>4. Configure Custom Domain (Optional)</h3>
-            <p>If you want to use <code>fratquintero.dpdns.org</code>:</p>
+            <p>If you want to use a custom domain like <code>pages.fratquintero.dpdns.org</code>:</p>
             <ol>
-                <li>In Pages settings, enter <code>fratquintero.dpdns.org</code> in <strong>Custom domain</strong></li>
+                <li>In Pages settings, enter your custom domain name</li>
                 <li>Click <strong>Save</strong></li>
                 <li>GitHub will create a <code>CNAME</code> file automatically</li>
+                <li>Update your FreeDNS or domain registrar DNS records to point to GitHub Pages</li>
             </ol>
 
             <h2>📁 Project Structure</h2>
@@ -230,18 +231,19 @@ git push origin main</code></pre>
 
             <h2>🌐 Access Your Site</h2>
             <ul>
-                <li><strong>GitHub Pages URL</strong>: <code>https://YOUR_USERNAME.github.io/YOUR_REPO_NAME</code></li>
-                <li><strong>Custom Domain</strong>: <code>https://fratquintero.dpdns.org</code> (after DNS setup)</li>
+                <li><strong>Main Page</strong>: <code>https://pages.fratquintero.dpdns.org/index.html</code></li>
+                <li><strong>Documentation</strong>: <code>https://pages.fratquintero.dpdns.org/readme.html</code></li>
+                <li><strong>GitHub Pages URL</strong>: <code>https://frquintero.github.io/pages_demo</code></li>
             </ul>
 
             <h2>📝 FreeDNS Setup (for custom domain)</h2>
-            <p>If using custom domain, configure FreeDNS:</p>
+            <p>If using custom domain <code>pages.fratquintero.dpdns.org</code>:</p>
             <ol>
                 <li>Login to <a href="https://freedns.afraid.org" style="color: #fff; text-decoration: underline;">FreeDNS.afraid.org</a></li>
                 <li>Go to Dynamic DNS</li>
-                <li>Find <code>fratquintero.dpdns.org</code></li>
-                <li>Copy the Direct URL</li>
-                <li>Set up automatic updates (see original setup files)</li>
+                <li>Find or create a subdomain entry for your custom domain</li>
+                <li>Point it to your GitHub Pages domain</li>
+                <li>Set up automatic updates if needed</li>
             </ol>
 
             <h2>🎯 Demo</h2>
