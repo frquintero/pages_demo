@@ -7,40 +7,41 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <h1 class="floating">🌴 Digital Oasis</h1>
         <p class="subtitle">Welcome to fratquintero.dpdns.org - A simple corner of the internet</p>
 
-        <div style="margin: 20px 0;">
-            <a href="readme.html" class="color-button" style="display: inline-block; text-decoration: none;">📖 Documentation</a>
+        <div class="link-wrapper">
+            <a href="readme.html" class="color-button">📖 Documentation</a>
         </div>
 
-        <div class="status pulse">
-            ✅ Server Status: Online & Secure
+        <div class="status pulse" role="status" aria-live="polite">
+            ✅ Server Status: Online &amp; Secure
         </div>
 
-        <div class="interactive-section">
-            <h2>Interactive Demo</h2>
+        <section class="interactive-section" aria-labelledby="demo-controls">
+            <h2 id="demo-controls">Interactive Demo</h2>
             <p>Click the buttons to change the background color!</p>
-            <br>
-            <button class="color-button" onclick="changeBackground('#667eea')">Ocean Blue</button>
-            <button class="color-button" onclick="changeBackground('#764ba2')">Purple Dream</button>
-            <button class="color-button" onclick="changeBackground('#f093fb')">Pink Sunset</button>
-            <button class="color-button" onclick="changeBackground('#4facfe')">Sky Blue</button>
-            <button class="color-button" onclick="changeBackground('#43e97b')">Green Fresh</button>
-        </div>
+            <div class="button-group">
+                <button type="button" class="color-button" data-color="#667eea">Ocean Blue</button>
+                <button type="button" class="color-button" data-color="#764ba2">Purple Dream</button>
+                <button type="button" class="color-button" data-color="#f093fb">Pink Sunset</button>
+                <button type="button" class="color-button" data-color="#4facfe">Sky Blue</button>
+                <button type="button" class="color-button" data-color="#43e97b">Green Fresh</button>
+            </div>
+        </section>
 
-        <div class="interactive-section">
-            <h2>Visit Counter</h2>
-            <div class="counter" id="counter">0</div>
-            <button class="color-button" onclick="incrementCounter()">Click Me!</button>
-        </div>
+        <section class="interactive-section" aria-labelledby="docs-visit-counter">
+            <h2 id="docs-visit-counter">Visit Counter</h2>
+            <div class="counter" id="counter" aria-live="polite">0</div>
+            <button type="button" class="color-button" data-action="increment-counter">Click Me!</button>
+        </section>
 
-        <div class="footer">
+        <footer class="footer">
             <p>Powered by Python HTTPS Server | SSL Secured | FreeDNS Dynamic Updates</p>
-            <p>Current Time: <span id="currentTime"></span></p>
-        </div>
-    </div>
+            <p>Current Time: <span id="currentTime">--:--:--</span></p>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
