@@ -12,6 +12,10 @@ server.log
 *.pem
 *.key
 
+# Environment variables (keep private)
+.env
+.env.local
+
 # OS files
 .DS_Store
 Thumbs.db
