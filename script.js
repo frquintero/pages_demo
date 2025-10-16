@@ -88,6 +88,36 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime(); // Initial call
 
+// Weather functionality
+async function getWeather() {
+    const weatherElement = document.getElementById('weather-info');
+    if (!navigator.geolocation) {
+        weatherElement.textContent = 'Geolocation not supported';
+        return;
+    }
+
+    try {
+        const position = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
+
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        const response = await fetch(`https://wttr.in/~${lat},${lon}?format=j1`);
+        const data = await response.json();
+
+        const temp = data.current_condition[0].temp_C;
+        const condition = data.current_condition[0].weatherDesc[0].value;
+        const location = data.nearest_area[0].areaName[0].value;
+
+        weatherElement.innerHTML = `${location}: ${temp}°C, ${condition}`;
+    } catch (error) {
+        weatherElement.textContent = 'Unable to load weather';
+        console.error('Weather error:', error);
+    }
+}
+
 // Add some fun on page load
 window.addEventListener('load', () => {
     document.querySelector('h1').style.opacity = '0';
@@ -97,6 +127,9 @@ window.addEventListener('load', () => {
         document.querySelector('h1').style.transition = 'opacity 1s';
         document.querySelector('h1').style.opacity = '1';
     }, 500);
+
+    // Load weather
+    getWeather();
 });
 
 // Add keyboard shortcuts
