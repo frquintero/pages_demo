@@ -91,6 +91,8 @@ updateTime(); // Initial call
 // Weather functionality
 async function getWeather() {
     const weatherElement = document.getElementById('weather-info');
+    weatherElement.textContent = 'Loading weather...';
+
     if (!navigator.geolocation) {
         weatherElement.textContent = 'Geolocation not supported';
         return;

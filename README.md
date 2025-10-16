@@ -54,7 +54,7 @@ your-repo/
 - **Interactive Elements**: Color-changing background buttons
 - **Real-time Clock**: Updates every second
 - **Visit Counter**: Click counter with animations
-- **Local Weather**: Automatic location-based weather display
+- **Local Weather**: Automatic location-based weather display with refresh button
 - **Modern UI**: Glassmorphism design with gradients
 - **Keyboard Shortcuts**: Press 1-5 to change colors
 
@@ -82,7 +82,7 @@ The page includes:
 - Floating animations
 - Interactive counter
 - Real-time clock
-- Local weather display with geolocation
+- Local weather display with geolocation and refresh button
 - Keyboard shortcuts (1-5 for colors)
 
 Enjoy your new website! 🌴✨
