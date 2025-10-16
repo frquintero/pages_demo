@@ -44,9 +44,12 @@ If you want to use a custom domain like `pages.fratquintero.dpdns.org`:
 ## 📁 Project Structure
 ```
 your-repo/
-├── index.html          # Main web page with CSS and JS
-├── README.md           # This file
-└── docs/              # Alternative location (not needed for Pages)
+├── index.html          # Main landing page
+├── styles.css          # Shared styling for both entry points
+├── script.js           # Shared interactivity module
+├── readme.html         # Bundled documentation
+├── README.md           # Project overview and setup notes
+└── docs/               # GitHub Pages deployment root (mirrors key assets)
 ```
 
 ## 🎨 Features
@@ -59,9 +62,13 @@ your-repo/
 - **Keyboard Shortcuts**: Press 1-5 to change colors
 
 ## 🔧 Customization
-- Edit `index.html` to change content, colors, or add features
-- Modify the CSS in the `<style>` tag for styling
-- Update JavaScript in the `<script>` tag for functionality
+- Edit `index.html` to update copy, layout, or metadata
+- Tweak design tokens and layout rules in `styles.css`
+- Extend interactivity in `script.js` using the shared data-attribute patterns
+- Mirror changes in the `/docs` directory when deploying GitHub Pages from that folder
+
+## ✅ Development Standards
+- Review [STANDARDS.md](STANDARDS.md) for the agreed-upon formatting, accessibility, and scripting conventions before contributing changes.
 
 ## 🌐 Access Your Site
 - **Main Page**: `https://pages.fratquintero.dpdns.org/index.html`
